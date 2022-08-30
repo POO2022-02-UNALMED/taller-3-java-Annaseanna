@@ -6,7 +6,7 @@ public class TV {
     private Control control;
     private int canal;
     private int precio;
-    private boolean estado;
+    boolean estado;
     private int volumen;
 
     //constructor
@@ -54,6 +54,9 @@ public class TV {
         if(canal>=1 && canal<=120 && estado==true) {
             this.canal = canal;
         }
+    }
+    public static void setNumTV(int numTV) {
+        TV.numTv = numTV;
     }
     //metodos
     public static int getNumTv(){
