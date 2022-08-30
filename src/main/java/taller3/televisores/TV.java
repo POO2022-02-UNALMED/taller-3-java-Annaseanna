@@ -16,7 +16,7 @@ public class TV {
         canal=1;
         volumen=1;
         precio=500;
-        numTv++;
+        TV.numTv++;
     }
     //getters
     public Marca getMarca(){
@@ -60,7 +60,7 @@ public class TV {
     }
     //metodos
     public static int getNumTv(){
-        return numTv;
+        return TV.numTv;
     }
     public void turnOn(){
         estado=true;
