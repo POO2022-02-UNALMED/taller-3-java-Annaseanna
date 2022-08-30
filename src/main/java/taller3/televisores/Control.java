@@ -1,10 +1,19 @@
 package taller3.televisores;
 
 public class Control {
-    TV tv;
+    private TV tv;
     public void enlazar(TV tv){
         this.tv=tv;
         tv.setControl(this);
+    }
+    public void setCanal(int canal){
+        tv.setCanal(canal);
+    }
+    public void setVolumen(int volumen){
+        tv.setVolumen(volumen);
+    }
+    public void setTv(TV tv){
+        this.tv=tv;
     }
     //metodos
     public void turnOn(){

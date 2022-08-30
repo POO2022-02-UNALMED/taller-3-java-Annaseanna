@@ -51,23 +51,19 @@ public class TV {
         this.volumen=volumen;
     }
     public void setCanal(int canal){
-        this.canal=canal;
+        if(canal>=1 && canal<=120 && estado==true) {
+            this.canal = canal;
+        }
     }
     //metodos
-    public int getNumTv(){
+    public static int getNumTv(){
         return numTv;
     }
     public void turnOn(){
-        if (estado==false){
-            estado=true;
-        }
-        System.out.println("Televisor encendido");
+        estado=true;
     }
     public void turnOff(){
-        if (estado==true){
-            estado=false;
-        }
-        System.out.println("Televisor apagado");
+        estado=false;
     }
     public void canalUp(){
         if (canal<120 && canal>=1 && estado ==true){
