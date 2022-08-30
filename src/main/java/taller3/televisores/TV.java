@@ -10,7 +10,7 @@ public class TV {
     private int volumen;
 
     //constructor
-    public TV(boolean estado, Marca marca){
+    public TV(Marca marca,boolean estado){
         this.marca=marca;
         this.estado=estado;
         canal=1;
