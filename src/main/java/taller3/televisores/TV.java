@@ -1,104 +1,109 @@
 package taller3.televisores;
 
 public class TV {
-    private static int numTv;
     private Marca marca;
-    private Control control;
-    private int canal;
-    private int precio;
+    private int canal = 1;
+    private int precio = 500;
     boolean estado;
-    private int volumen;
+    private int volumen = 1;
+    private Control control;
 
-    //constructor
-    public TV(Marca marca,boolean estado){
-        this.marca=marca;
-        this.estado=estado;
-        canal=1;
-        volumen=1;
-        precio=500;
-        TV.numTv++;
+    private static int numTV = 0;
+
+    public TV(Marca marca, boolean estado) {
+        this.setMarca(marca);
+        this.estado = estado;
+
+        numTV++;
     }
-    //getters
-    public Marca getMarca(){
-        return marca;
+
+    public void volumenUp() {
+        if (volumen < 7 && estado) {
+            volumen++;
+        }
     }
-    public Control getControl(){
-        return control;
+
+    public void volumenDown() {
+        if (volumen > 0 && estado) {
+            volumen--;
+        }
     }
-    public int getPrecio(){
-        return precio;
+
+    public void canalUp() {
+        if (canal < 120 && estado) {
+            canal++;
+        }
     }
-    public int getVolumen(){
-        return volumen;
+
+    public void canalDown() {
+        if (canal > 1 && estado) {
+            canal--;
+        }
     }
-    public int getCanal(){
-        return canal;
+
+    public void turnOn() {
+        estado = true;
     }
-    public boolean getEstado(){
+
+    public void turnOff() {
+        estado = false;
+    }
+
+    public boolean getEstado() {
         return estado;
     }
-    //setters
-    public void setMarca(Marca marca){
-        this.marca=marca;
+
+    public Marca getMarca() {
+        return marca;
     }
-    public void setControl(Control control){
-        this.control=control;
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
     }
-    public void setPrecio(int precio){
-        this.precio=precio;
+
+    public int getCanal() {
+        return canal;
     }
-    public void setVolumen(int volumen){
-        this.volumen=volumen;
-    }
-    public void setCanal(int canal){
-        if(canal>=1 && canal<=120 && estado==true) {
+
+    public void setCanal(int canal) {
+        if (canal <= 120 && canal >= 1 && estado) {
             this.canal = canal;
         }
     }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public int getVolumen() {
+        return volumen;
+    }
+
+    public void setVolumen(int volumen) {
+        if (volumen <= 7 && volumen >= 0 && estado) {
+            this.volumen = volumen;
+        }
+        ;
+    }
+
+    public Control getControl() {
+        return control;
+    }
+
+    public void setControl(Control control) {
+        this.control = control;
+    }
+
+    public static int getNumTV() {
+        return numTV;
+    }
+
     public static void setNumTV(int numTV) {
-        TV.numTv = numTV;
-    }
-    //metodos
-    public static int getNumTv(){
-        return TV.numTv;
-    }
-    public void turnOn(){
-        estado=true;
-    }
-    public void turnOff(){
-        estado=false;
-    }
-    public void canalUp(){
-        if (canal<120 && estado ==true){
-            canal++;
-        }
-        else {
-            System.out.println("No hay mas canales");
-        }
-    }
-    public void canalDown(){
-        if (canal<120 && estado ==true){
-            canal--;
-        }
-        else {
-            System.out.println("No hay mas canales");
-        }
-    }
-    public void volumenUp(){
-        if (volumen<7 && estado ==true){
-            volumen++;
-        }
-        else {
-            System.out.println("Llego al tope min o max de volumen");
-        }
-    }
-    public void volumenDown(){
-        if (volumen<7 && estado ==true){
-            volumen--;
-        }
-        else {
-            System.out.println("Llego al tope min o max de volumen");
-        }
+        TV.numTV = numTV;
     }
 
 }
