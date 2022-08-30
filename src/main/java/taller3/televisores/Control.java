@@ -4,16 +4,13 @@ public class Control {
     private TV tv;
     public void enlazar(TV tv){
         this.tv=tv;
-        tv.setControl(this);
+        this.tv.setControl(this);
     }
     public void setCanal(int canal){
-        tv.setCanal(canal);
-    }
-    public void setVolumen(int volumen){
-        tv.setVolumen(volumen);
+        this.tv.setCanal(canal);
     }
     public TV getTv() {
-        return tv;
+        return this.tv;
     }
     public void setTv(TV tv){
         this.tv=tv;
