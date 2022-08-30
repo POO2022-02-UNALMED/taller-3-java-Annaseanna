@@ -2,17 +2,20 @@ package taller3.televisores;
 
 public class TV {
     private static int numTv;
-    Marca marca;
-    Control control;
-    private int canal=1;
-    private int precio=500;
+    private Marca marca;
+    private Control control;
+    private int canal;
+    private int precio;
     private boolean estado;
-    private int volumen=1;
+    private int volumen;
 
     //constructor
     public TV(boolean estado, Marca marca){
         this.marca=marca;
         this.estado=estado;
+        canal=1;
+        volumen=1;
+        precio=500;
         numTv++;
     }
     //getters
@@ -51,8 +54,8 @@ public class TV {
         this.canal=canal;
     }
     //metodos
-    public int cantidadProd(){
-        return TV.numTv;
+    public int getNumTv(){
+        return numTv;
     }
     public void turnOn(){
         if (estado==false){
@@ -67,16 +70,16 @@ public class TV {
         System.out.println("Televisor apagado");
     }
     public void canalUp(){
-        if (canal<=119 && canal>=1 && estado ==true){
-            canal=canal++;
+        if (canal<120 && canal>=1 && estado ==true){
+            canal++;
         }
         else {
             System.out.println("No hay mas canales");
         }
     }
     public void canalDown(){
-        if (canal<=119 && canal>=1 && estado ==true){
-            canal=canal--;
+        if (canal<120 && canal>=1 && estado ==true){
+            canal--;
         }
         else {
             System.out.println("No hay mas canales");
