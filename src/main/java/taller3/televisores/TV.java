@@ -66,7 +66,7 @@ public class TV {
         estado=false;
     }
     public void canalUp(){
-        if (canal<120 && canal>=1 && estado ==true){
+        if (canal<120 && estado ==true){
             canal++;
         }
         else {
@@ -74,7 +74,7 @@ public class TV {
         }
     }
     public void canalDown(){
-        if (canal<120 && canal>=1 && estado ==true){
+        if (canal<120 && estado ==true){
             canal--;
         }
         else {
@@ -82,7 +82,7 @@ public class TV {
         }
     }
     public void volumenUp(){
-        if (volumen<7 && volumen>1 && estado ==true){
+        if (volumen<7 && estado ==true){
             volumen++;
         }
         else {
@@ -90,7 +90,7 @@ public class TV {
         }
     }
     public void volumenDown(){
-        if (volumen<7 && volumen>1 && estado ==true){
+        if (volumen<7 && estado ==true){
             volumen--;
         }
         else {
